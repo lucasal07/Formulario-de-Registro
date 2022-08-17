@@ -7,18 +7,20 @@ function showAlertError() {
 }
 
 function requirement () {
-    var nombre = document.getElementById("nombre").value
-    var apellido = document.getElementById("apellido").value
-    var email = document.getElementById("email").value
-    var password = document.getElementById("password1").value
-    var password1 = document.getElementById("password2").value
-    var boton = document.getElementById("terminos").value
-
-    if ((nombre.length  || apellido.length || email.length) == 0 && boton==false){
+    var nombre = document.getElementById("nombre").value;
+    var apellido = document.getElementById("apellido").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password1").value;
+    var password1 = document.getElementById("password2").value;
+   
+    
+   if ((nombre.length  || apellido.length || email.length) == 0 ){
         showAlertError()
     } else if (password.length <= 5){
         showAlertError()
     } else if (password !== password1) {
+        showAlertError()
+    }else if(!document.getElementById("terminos").checked){
         showAlertError()
     }
     else {
@@ -26,5 +28,7 @@ function requirement () {
     }
 }  
 
+
 const registro = document.getElementById("regBtn") 
 registro.addEventListener ( "click", requirement)
+
