@@ -29,7 +29,7 @@ function requirement () {
     
 }  
 
-
+// lucas, maglis, juan//
 const registro = document.getElementById("regBtn") 
 registro.addEventListener ( "click", requirement)
 
