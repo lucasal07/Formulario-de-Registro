@@ -12,8 +12,9 @@ function requirement () {
     var email = document.getElementById("email").value
     var password = document.getElementById("password1").value
     var password1 = document.getElementById("password2").value
+    var boton = document.getElementById("terminos").value
 
-    if ((nombre.length  || apellido.length || email.length) == 0 ){
+    if ((nombre.length  || apellido.length || email.length) == 0 && boton==false){
         showAlertError()
     } else if (password.length <= 5){
         showAlertError()
