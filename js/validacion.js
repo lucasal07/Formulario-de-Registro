@@ -1,3 +1,6 @@
+// Lucas Alonzo, Maglis Galván, Juan San Pedro//
+
+
 function showAlertSuccess() {
     document.getElementById("alert-success").classList.add("show");
 }
@@ -6,7 +9,7 @@ function showAlertError() {
     document.getElementById("alert-danger").classList.add("show");
 }
 
-function requirement () {
+function requirement() {
     var nombre = document.getElementById("nombre").value;
     var apellido = document.getElementById("apellido").value;
     var email = document.getElementById("email").value;
@@ -20,16 +23,24 @@ function requirement () {
         showAlertError()
     } else if (password !== password1) {
         showAlertError()
-    }else if(!document.getElementById("terminos").checked){
+    }else if(document.getElementById("terminos").checked === false){
         showAlertError()
     }
     else {
-       showAlertSuccess()
+       showAlertSuccess();
+       buttonClose = document.getElementById("ButtonClose");
+       buttonClose.addEventListener("click",function(){
+        location.href = "index.html";
+       })
+       
     }
     
 }  
 
-// lucas, maglis, juan//
-const registro = document.getElementById("regBtn") 
-registro.addEventListener ( "click", requirement)
+
+const registrarme = document.getElementById("regBtn");
+
+registrarme.addEventListener( "click", function(){
+            requirement();
+});
 
